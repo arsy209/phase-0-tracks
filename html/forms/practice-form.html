@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Forms Practice</title>
+</head>
+<body>
+  <h1>Name your Adventure!</h1>
+  <form name="activities" action="success.html" method="post">
+  <fieldset>
+    <div>
+      <label>Name:</label>
+      <input type="text" name="fullname">
+    </div>
+    <div>
+      <label>Age:</label>
+      <input type = "text" name = "age">
+    </div>
+    <div>
+      <label>Email:</label>
+      <input type="email" name="email">
+    </div>
+
+    <div>
+      <label>Password:</label>
+      <input type="password" name="password">
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <div>
+      <label>Adventure name:</label>
+      <input type="text" name="adv-name" placeholder="Name this adventure">
+    </div>
+
+    <div>
+      <label>Type of bicycle:</label>
+      <select name="bike">
+        <option value="road">Road</option>
+        <option value="road">Mountain</option>
+        <option value="road">Cyclocross</option>
+      </select>
+    </div>
+
+    <div>
+      <label>Choose a date:</label>
+      <input type="date" name="date">
+    </div>
+
+    <div>
+      <input type="checkbox" name="cb-agree" value="agree">
+      I am prepared to lead this adventure.
+    </div>
+  </fieldset>
+
+  <button type="submit">Save this adventure</button>
+</form>

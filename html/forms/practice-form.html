@@ -1,56 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Forms Practice</title>
+  <title>Survey!</title>
 </head>
 <body>
-  <h1>Name your Adventures!</h1>
+  <h1>Name Your Favorite Adventure!</h1>
   <form name="activities" action="success.html" method="post">
   <fieldset>
     <div>
       <label>Name:</label>
-      <input type="text" name="fullname">
+      <input type="text" name="name">
     </div>
     <div>
       <label>Age:</label>
-      <input type = "text" name = "age">
+      <input type = "text" name = "Age">
     </div>
     <div>
-      <label>Email:</label>
-      <input type="email" name="email">
+      <label>Main Email:</label>
+      <input type="email" name=" Main Email">
     </div>
 
-    <div>
-      <label>Password:</label>
-      <input type="password" name="password">
-    </div>
+    
   </fieldset>
 
   <fieldset>
+  
     <div>
-      <label>Adventure name:</label>
-      <input type="text" name="adv-name" placeholder="Name this adventure">
-    </div>
-
-    <div>
-      <label>Type of bicycle:</label>
-      <select name="bike">
-        <option value="road">Road</option>
-        <option value="road">Mountain</option>
-        <option value="road">Cyclocross</option>
+      <label>Favorite Activity:</label>
+      <select name="Favorite Activity">
+        <option value="Hiking">Hiking</option>
+        <option value="Kayaking">Kayaking</option>
+        <option value="Fishing">Fishing</option>
       </select>
     </div>
-
+<p>
+<label>Why did you choose this Activity?</label>
+  </p>
     <div>
-      <label>Choose a date:</label>
-      <input type="date" name="date">
+
+      <textarea name="text" rows="10" cols="50"></textarea>
+
     </div>
 
-    <div>
-      <input type="checkbox" name="cb-agree" value="agree">
-      I am prepared to lead this adventure.
-    </div>
+    
   </fieldset>
 
-  <button type="submit">Save this adventure</button>
+
+
+<blockquote>
+
+  <button type="submit">Submit Form></button>
+
+  </blockquote>
 </form>

@@ -1,0 +1,13 @@
+How to use a Elevator:
+	1. first you would see a set of buttons that point up and down, you would need to choose whether you want to go up or down.
+	2. if you want to go up, you would click the arrow pointing up or if you want to go down, you would click the arrow pointing down. 
+	3. if there are people leaving the elevator, you would need to let them go out first before entering the elevator yourself.
+	4. also before entering the elevator, you would want to check if the arrow located above the entrance if pointing towards your direction or not. 
+	5. always make sure there is space inside the elevator before entering and always leave space for other people to enter. 
+	6. once you enter the elevator, you would see a set of buttons on either the left or right side inside the elevator.
+	7. depending on the number of floors in the building you are in, it would go from the main floor up to whatever the max floor number is. The numbers go from left to right so it would 1,2,3,4,5 then make a new line and so on.
+	8. while inside the elevator, make sure not to disturb the surrounding area with any type of excess noise.
+	9. as people enter and leave each floor, make sure you pay attention to what floor you have reached so that you do not miss the floor you are suppose to enter. 
+	10. make sure to be polite if someone is in you way upon leaving the elevator and make sure it fully opens on your floor. 
+	11. if the elevator is crowded and it takes time to leave, make sure someone can hold the door so you would get to leave instead of missing the floor. 
+	12. always leave fast because the elevator would not wait before closing. it doesnt know if you left or not!

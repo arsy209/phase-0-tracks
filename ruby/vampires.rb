@@ -1,14 +1,16 @@
 puts "What is your name?"
 name = gets.chomp
 
-puts "How old are you? what year were you born in?"
-input = gets.chomp
+puts "How old are you?"
+age = gets.chomp
+
+puts= "what year were you born in?"
 
 puts " Our company cafeteria serves garlic bread. should we order some for you? (yes/no)"
-input2 = gets.chomp
+garlic = gets.chomp
 
 puts "Would you like to enroll in the company's health insurance? (yes/no)"
-input3 = gets.chomp
+health = gets.chomp
 
 
 

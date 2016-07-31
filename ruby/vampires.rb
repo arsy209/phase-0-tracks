@@ -1,57 +1,61 @@
 
+p" How many employees will be taking this questionaire?"
+	employees=gets.chomp
+	total = employees.to_i
+ 
+index=0
 
-puts "What is your name?"
-name = gets.chomp
-if name == " drake cula" 
-	correct_name = false
-	elsif name == " tu fang"
-	correct_name = false
-else 
-	current_name = true
-end
-puts "How old are you?"
-age = gets.chomp
+until  index >= total
 
-puts "What year were you born"
-born = gets.chomp
-current_year = 2016
-correct_age = current_year - born.to_i
+	p" What is your name?"
+		name = gets.chomp.capitalize!
+	
+	p" How old are you #{name}?"
+ 		age = gets.chomp.to_i
 
-puts " you are actually #{current_year - born.to_i} years old"
-			if correct_age = age
-				correct_age = true
-			elsif correct_age != age
-    			correct_age = false 
-			end
+	p" #{name},what year you have born?"
+		born = gets.chomp.to_i
+		current_year = 2016
+		correct_age = current_year - born.to_i
+	
+p "Our company cafeteria serves garlic bread. should we order some for you (yes/no)?"
+	garlic = gets.chomp.to_s
 
-puts " Our company cafeteria serves garlic bread. should we order some for you (yes/no)?"
-garlic = gets.chomp
+p "Would you like to enroll in the company's health insurance (yes/no)? "
+	health = gets.chomp.to_s
+	
+			
+	if correct_age == 2016 && (garlic =="yes" || health =="yes")
+		p "#{name} probably not a vampire!"
+			    
+	elsif correct_age != 2016  && ( garlic !="yes" || health !="yes")
+	    p "#{name} is probably a vampire!"
+				 
+	elsif (correct_age != 2016 || garlic !="yes" ) && health !="yes"
+		p "#{name} is almost certainly a vampire!"		 	
+	elsif (name =="Drake cula" || name == "Tu fang") && [(correct_age == 2016 && garlic == "yes") || health == "yes"] 
+		p "#{name} is Definitely a vampire."
+	else
+	    p " Results inconclusive"
+	   
+end	    	
 
- 		if garlic =="yes"
- 			likes_garlic = true
- 		else
- 			likes_garlic = false 
- 		end
-
-
-puts "Would you like to enroll in the company's health insurance (yes/no)? "
-health = gets.chomp
-		if health == "yes"
-			wants_health_insurance = true
-		else
-			wants_health_insurance = false 
-		end	
+		index+=1
 		
-	
-	
-if correct_age && likes_garlic && wants_health_insurance
-	p "probably not a vampire."
+			    for count in 1...20
+			   		p  "Please name any types of allergies you may have otherwise if you have none, just write done to end the questionaire?"
+			    		allergies = gets.chomp.to_s 
 
-elsif correct_age && (likes_garlic || wants_health_insurance)
-	 p "Probably a vampire."
-elsif  correct_name && correct_age && likes_garlic && wants_health_insurance
- 	p "Definitely a vampire."
-else
- 	p "Results inconclusive."
+			    if
+				    allergies=="sunshine"
+				   		p " Probably a vampire!"
+		        break
 
+				elsif
+				   allergies == "done"
+				break
 end
+end
+end
+
+p "Actually, never mind! What do these questions have to do with anything? Let's all be friends #{name}!"

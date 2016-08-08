@@ -1,4 +1,3 @@
-
 puts "WELCOME TO THE NAME CHANGER PROGRAM WHERE YOUR REAL NAME IS CHANGED TO A SECRET NAME:\n"
 
 def decode(new_name)
@@ -35,7 +34,8 @@ while true
 
 	print " \n\nEnter quit if you are done otherwise you can continue to decode more names by pressing enter "
 		  input = gets.chomp
-		if input == "quit"
+	      
+	      if input == "quit"
   
  break
 
@@ -45,9 +45,10 @@ end
 end
 
 
-name = (first_name + last_name)
+name = (decode(new_name))
 secret_hash.store(name, new_name)
 
 secret_hash.each  {|name, new_name| 
 	puts "#{new_name} is also known as #{name}, is that not shocking!!!!!."}
+	
 

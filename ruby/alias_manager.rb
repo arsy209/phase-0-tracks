@@ -1,4 +1,6 @@
 
+puts "WELCOME TO THE NAME CHANGER PROGRAM WHERE YOUR REAL NAME IS CHANGED TO A SECRET NAME:\n"
+
 def decode(new_name)
 alphabet_vowels="aeiou"
 alphabet_consonants="bcdfghjklmnpqrstvwxyz"
@@ -15,31 +17,37 @@ new_name_split.map! do |letter|
 		new_new_name << " "
 	end
 end
-new_new_name.join(" ").split.map {|letter| letter.capitalize}.join(" ")
-
+		new_new_name.join("").split.map{|letter| letter.capitalize}.join(" ")
 end
+
+
 
 
 secret_hash={}
-
-print "Please enter your first name here:"
-first_name=gets.chomp.downcase
-print "Please enter your last name here:"
-last_name=gets.chomp.downcase
-new_name =last_name+ " "+first_name
-print "Your new secret name is: " + decode(new_name)
-
-
 while true
-print " enter quit if you are done otherwise you can continue to decode more names "
-	input = gets.chomp
-	if input == "quit"
-     break
-	
- p secret_hash[first_name.capitalize+" "+last_name.capitalize] = decode(new_name)
-stored_aliases.each {|real_name, new_name| puts "#{real_name} is also known as #{new_name}."}
+	print "\nPlease enter your first name here:"
+		  first_name=gets.chomp.downcase
+	print "\nPlease enter your last name here:"
+		  last_name=gets.chomp.downcase
+		  new_name =last_name+" "+first_name
+	print "\nYour new secret name is:\n " + decode(new_name)
+
+
+	print " \n\nEnter quit if you are done otherwise you can continue to decode more names by pressing enter "
+		  input = gets.chomp
+		if input == "quit"
+  
+ break
+
+
 end
-end 
-secret_hash.each do |name,new_name|
-	puts "The true identity of #{new_name} is actually #{name}"
+	secret_hash[last_name.capitalize+" "+first_name.capitalize] = decode(new_name)
 end
+
+
+name = (first_name + last_name)
+secret_hash.store(name, new_name)
+
+secret_hash.each  {|name, new_name| 
+	puts "#{new_name} is also known as #{name}, is that not shocking!!!!!."}
+

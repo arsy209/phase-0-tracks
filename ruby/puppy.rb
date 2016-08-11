@@ -1,17 +1,20 @@
 
-#anmimal : puppy
+#animal : puppy
+
 
 
 #characteristics--------
 #fur color : brown
 #eye color : black
-#name : max
-
+#name : Grizzly
+#height: 3 inches tall
+#type: pitbull
 
 #behavior----------
-#wags tail alot
-#loves to lick owner
-#loves to sleep
-#runs around alot
+#pout
+#eat
+#sleep
+#run
 #chases squirrls
-
+#fetch
+#howl

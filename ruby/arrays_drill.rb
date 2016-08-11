@@ -5,15 +5,9 @@ def build_array(item_1, item_2, item_3)
             item_3
         ]
 end 
-
-
-
 def add_to_array(array, item)
         array << item
 end 
-
-
-
 dogs = []
 p dogs
 
@@ -29,7 +23,7 @@ p dogs
 dogs.shift
 p dogs
 
-dogs.include?("Mashed potatoes")
+p "Dogs includes Mashed potatoes:" + " " + dogs.include?("Mashed potatoes").to_s
 p dogs
 
 cats= []
@@ -46,4 +40,5 @@ p build_array("circles", "squares", "rectangles")
 
 #method number two : inserting arrays 
 p add_to_array([], "vanilla")
+
 p add_to_array(["chocolate", "mint", "banana", 1, 2], 3)

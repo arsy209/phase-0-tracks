@@ -1,0 +1,37 @@
+
+.size {
+
+   position: absolute;
+   top: 49%;
+   left: 49%;
+   width: 200px;
+   height: 200px;
+   margin-top: -200px; 
+   margin-left: -150px; 
+}
+
+
+
+.size1 {
+ position: relative;
+   top: 60%;
+   left: 55%;
+
+   width: 100px;
+   height: 100px;
+   margin-top: 100px; 
+   margin-left: -160px; 
+   margin-bottom: 200px;
+
+}
+.size2 {
+position: absolute;
+   top: -9%;
+   left: 55%;
+  
+   width: 100px;
+   height: 100px;
+   margin-top: 50px; 
+   margin-left: -150px; 
+margin-bottom: 200px;
+}

@@ -1,0 +1,47 @@
+html{
+
+        background-image: url("Octocat.png");
+        background-size: 200px 166.25px;
+}
+
+body {
+         width: 960px;
+         padding: 60px;
+}
+
+header{
+          background-color: red;
+         border-bottom: dashed 5px;
+         margin-bottom: 15px;
+}
+
+h1 {
+        font-family: Helvetica;
+}
+
+footer{
+        background-color: tan;
+        border-top: dashed 5px;
+        padding-top: 13px;
+        margin-top: 15px;
+}
+.column-1 {
+       background-color: yellow;
+       display: inline-block;
+       vertical-align: top;
+       width: 420px;
+       padding: 10px;
+       margin-right: 10px;
+       margin-left: 35px;
+}
+.column-2 {
+      background-color: green;
+      display: inline-block;
+      vertical-align: top;
+      width: 420px;
+      padding: 10px;
+}
+
+h2 {
+  color: blue;
+}

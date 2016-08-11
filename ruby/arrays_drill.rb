@@ -35,6 +35,10 @@ p cats
 animals = cats + dogs 
 p animals
 
+
+
+
+
 #method number one
 p build_array("circles", "squares", "rectangles")
 

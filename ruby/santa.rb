@@ -40,7 +40,7 @@ class Santa
   puts "This Santa's home is located in the North Pole"
   end
   
-  def about
+  def information
     puts "This Santa is  #{@age} years old and the Santa's ethnicity is #{@ethnicity} and the Santa's gender is #{@gender}"
   end
 
@@ -73,24 +73,38 @@ end
 
 
 #This is where the printing would begin from the methods above and prints it out 60 times for different santas
+
+
+puts " Click enter to begin the santa making process:"
+enter = gets.chomp
+
 santas = []
-  60.times do |a|
+while true
+
+  45.times do |number|
   santa = Santa.new(random_gender, random_ethnicity,)
-  santa.age = rand(140)
+  santa.age = rand(0...140)
   santa.reindeer = random_reindeer_list
   puts "******************************************"
   puts "#{santa.speak}"
- 
-  puts "This Santa ##{a+1} attributes are:"
+  puts "#{santa.eat_milk_and_cookies("snickerdoodle")}"
+  puts "This Santa ##{number+1} attributes are:"
   puts "#{santa.home}"
   puts "This Santa's Age: #{santa.age}"
   puts "This Santa's Gender: #{santa.gender}"
   puts "This Santa's Ethnicity: #{santa.ethnicity}"
   puts "This Santa's Reindeer set up: #{santa.reindeer}"
   puts "#{santa.get_mad_at("Nixon")}"
-  puts "#{santa.eat_milk_and_cookies("snickerdoodle")}"
+
   puts "*Important Information or summary of this Santa is:"
-  puts "#{santa.about}"
+  puts "#{santa.information}"
   puts "~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~"
+  end
+puts " \n\nIf you want to continue press enter or you can type quit to stop at the ones you created!"
+input = gets.chomp
+      if input == "quit"
+
+      puts " \n\nHAVE A MERRRY CHRISTMAS AND A HAPPY NEW YEAR!!"
+  break
+  end
 end
-puts " \n\nHAVE A MERRRY CHRISTMAS AND A HAPPY NEW YEAR!!"

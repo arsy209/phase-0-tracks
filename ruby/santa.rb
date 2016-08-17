@@ -2,7 +2,7 @@
 puts " WELCOME TO TO THE SANTA PRINTER:\n\n"
 
 class Santa
-  attr_reader  :ethnicity , :age
+  attr_reader  :ethnicity , :celebrate_birthday
   attr_accessor :age, :reindeer, :gender
 
 #this method initializes the different attributes that were  listed before

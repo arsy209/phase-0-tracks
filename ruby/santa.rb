@@ -2,20 +2,23 @@
 puts " WELCOME TO TO THE SANTA PRINTER:\n\n"
 
 class Santa
-  attr_reader  :ethnicity , :celebrate_birthday
+  attr_reader  :ethnicity , :celebrate_birthday, :get_mad_at,:home,:speak,:information,:eat_milk_and_cookies
   attr_accessor :age, :reindeer, :gender
 
 #this method initializes the different attributes that were  listed before
+#gender, which will be a string passed in on initialization
+#ethnicity, which will be a string passed in on initialization
+#reindeer_ranking, an array of reindeer from most preferred to least preferred. This is not passed in on initialization; it simply gets a default value of ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+#age, which is not passed in on initialization and defaults to 0
+#An initialize method that prints "Initializing Santa instance ..."
   def initialize(gender, ethnicity)
     puts "Initializing Santa instance now..."
-   
     @gender = gender
     @ethnicity = ethnicity
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-    @age = age
+    @age = 0
   end  
 
-#These methods would change up what will be called later on such as the age and the types of reindeer being called.
   def celebrate_birthday
     @age += 1
   end
@@ -27,7 +30,13 @@ class Santa
   
 
 
-#These actions were put to show what can be done with methods but would not affect anything unless called by using santa.
+##different methods that can be called later on in the driver code
+
+#These methods would change up what will be called later on such as the age and the types of reindeer being called.
+# A speak method that will print "Ho, ho, ho! Haaaappy holidays!" (Santa has been working on being more inclusive.)
+#An eat_milk_and_cookies method that takes a cookie type (example: "snickerdoodle") as a parameter and prints "That was a good <type of cookie here>!" 
+#Add a bit of code below your class declaration to check that you're able to initialize a Santa instance and call its methods.
+
   def speak
     puts  "Ho, ho, ho! Haaaappy holidays!" 
   end
@@ -59,50 +68,49 @@ def random_reindeer_list
   return new_reindeer
 end
 
-#Random Gender Selector
+#Random Gender Selector from a given set
 def random_gender
-  genders = ["agender", "female", "bigender", "male", "female",  "N/A", "heshe", " transgender female", "transgender male,alien"]
+  genders = ["agender", "female", "bigender", "male", "female",  "not provided", "heshe", " transgender female", "transgender male"]
   gender = genders[rand(genders.length)]
 end
 
-# Random Ethnicity selector
+# Random Ethnicity selector from a given set
 def random_ethnicity
-  ethnicity_arr = ["black", "Latino", "white", "Japanese","African", "prefered not to say it", "Strange Creature (unicorn)", "N/A"]
+  ethnicity_arr = ["black", "Latino", "white", "Japanese","African", "prefered not to say it", "holy", "ghost","ALIEN!!","Cartoon"]
   ethnicity = ethnicity_arr[rand(ethnicity_arr.length)]
 end
 
 
-#This is where the printing would begin from the methods above and prints it out 60 times for different santas
+#Driver Code
 
-
-puts " Click enter to begin the santa making process:"
+puts " Click enter to begin the Santa making process:"
 enter = gets.chomp
 
 santas = []
+#created a while look which would let the user continue making santas after the 200 mark is reached or they can type quit to stop.
 while true
+#created a loop that would make 200 santas with all of the different information listed about them
+  200.times do |number|
+  new_santa = Santa.new(random_gender, random_ethnicity)
+  new_santa.age = rand(140)
+  new_santa.reindeer = random_reindeer_list
+  puts "--------------------------------------------"
+  puts "#{new_santa.speak}"
+  puts "#{new_santa.eat_milk_and_cookies("snickerdoodle")}"
+  puts "This Santa ##{number+1}'s is good to go tonight due to the qualities listed below:\n\n"
+  puts "\n#{new_santa.home}"
+  puts "##{number+1}'s Santa's Age: #{new_santa.age}"
+  puts "##{number+1}'s Santa's Gender: #{new_santa.gender}"
+  puts "##{number+1}'s Santa's Ethnicity: #{new_santa.ethnicity}"
+  puts "#{new_santa.get_mad_at("Nixon")}"
 
-  45.times do |number|
-  santa = Santa.new(random_gender, random_ethnicity,)
-  santa.age = rand(0...140)
-  santa.reindeer = random_reindeer_list
-  puts "******************************************"
-  puts "#{santa.speak}"
-  puts "#{santa.eat_milk_and_cookies("snickerdoodle")}"
-  puts "This Santa ##{number+1} attributes are:"
-  puts "#{santa.home}"
-  puts "This Santa's Age: #{santa.age}"
-  puts "This Santa's Gender: #{santa.gender}"
-  puts "This Santa's Ethnicity: #{santa.ethnicity}"
-  puts "This Santa's Reindeer set up: #{santa.reindeer}"
-  puts "#{santa.get_mad_at("Nixon")}"
-
-  puts "*Important Information or summary of this Santa is:"
-  puts "#{santa.information}"
-  puts "~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~"
+  puts "\n\n\n*Important Information or summary of this Santa is:"
+  puts "#{new_santa.information}"
+ puts "--------------------------------------------"
   end
-puts " \n\nIf you want to continue press enter or you can type quit to stop at the ones you created!"
-input = gets.chomp
-      if input == "quit"
+puts " \n\nIf you want to continue making more santas press enter or you can type quit to stop at the ones you created!"
+type = gets.chomp
+      if type == "quit"
 
       puts " \n\nHAVE A MERRRY CHRISTMAS AND A HAPPY NEW YEAR!!"
   break

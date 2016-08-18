@@ -1,6 +1,5 @@
-
 class Puppy
-
+#this method runs every time we create a instance o this class. If we change the name, this method turns into a regular one.
    def initialize
     puts "Initializing new puppy instance ..."
    end
@@ -11,20 +10,20 @@ class Puppy
   end
   
   def speak(many_times)
-	many_times.times{puts "Woof!"}
+  many_times.times{puts "Woof!"}
   end
   
   def roll_over
-  	puts "*rolls over*"
+    puts "*rolls over*"
   end
   
   def dog_years(age)
-  	age * 7
+    age * 7
   end
   
   def run
  
-	puts "I am running very fast!!!!"	
+  puts "I am running very fast!!!!" 
   end
 end
 
@@ -36,4 +35,34 @@ puppy.roll_over
 puppy.dog_years(2)
 puppy.run
 
+puts "\n\n\n\n\n\n\n\n\n"
+class Person
+ def initialize
+    puts "Initializing new Person ..."
+   end
+ 
+ 
+ def walk
+  puts "I am walking now."
+ end
+ 
+ def sleep
+  puts "rhrhrhrhrhr!!!"
+ end
+
+end
+
+# maria = Person.new
+# maria.walk
+# maria.sleep
+array = []
+50.times {
+  person = Person.new
+  array.push(person)
+}
+
+ array.each do |one_person|
+  one_person.walk
+    one_person.sleep  
+ end
 

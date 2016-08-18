@@ -93,8 +93,6 @@ user_input = gets.chomp
         user_input = true
  end
  
-power_rangers.each do |name|
-	puts "#{power_rangers.name} is a #{power_rangers.age}-year-old, #{power_rangers.color} ducky! "
-end
+
 
 end

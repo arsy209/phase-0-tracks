@@ -26,7 +26,7 @@ class VirusPredictor
 #the purpose of using private is that the method can not be called by a parent file. A private is used when you dont want the public to have access to the method.
   private
 #this method would create the variable numeber of deaths which would do a calculation with the population instance variable.
-  def predicted_deaths(population_density, population, state)
+  def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
@@ -46,7 +46,7 @@ class VirusPredictor
 
   end
 #this method would create the speed variable by calculating the speed of the virus spread using the population density given then printing out the results at the end. 
-  def speed_of_spread(population_density, state) #in months
+  def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0

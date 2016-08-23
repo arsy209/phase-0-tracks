@@ -20,8 +20,8 @@ class VirusPredictor
   end
 #calling the methods and taking the different arguements needed for this type of method.
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths
+    speed_of_spread
   end
 #the purpose of using private is that the method can not be called by a parent file. A private is used when you dont want the public to have access to the method.
   private
@@ -91,3 +91,22 @@ end
 
 # alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
 # alaska.virus_effects
+
+
+
+#=======================================================================
+# Reflection Section
+#What are the differences between the two different hash syntaxes shown in the state_data file?
+   # the difference between the two different hash syntaxes are that one is useing a string and one is using a symbol. 
+
+#What does require_relative do? How is it different from require?
+    #require relative lets the file know that another file is needed to function and that it is located in the same directory where as require would need the full absolute pathway to work correctly.
+
+#What are some ways to iterate through a hash?
+  # one way of iterating through a hash is using .each which would go through all the hashes. 
+
+#When refactoring virus_effects, what stood out to you about the variables, if anything?
+  #in the virus_effect method, there were variables also shown which would not be needed because they are known as instance variables. 
+
+#What concept did you most solidify in this challenge?
+  # the concept that i most solidfied was the use of scope and different instance variables, how symbols work, the differences between relative_require and require.    

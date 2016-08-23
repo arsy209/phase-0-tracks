@@ -23,7 +23,7 @@ class VirusPredictor
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
   end
-
+#the purpose of using private is that the method can not be called by a parent file. A private is used when you dont want the public to have access to the method.
   private
 #this method would create the variable numeber of deaths which would do a calculation with the population instance variable.
   def predicted_deaths(population_density, population, state)
@@ -40,6 +40,8 @@ class VirusPredictor
       number_of_deaths = (@population * 0.05).floor
     end
 
+      
+    
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
   end

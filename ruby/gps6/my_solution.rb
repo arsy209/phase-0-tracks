@@ -70,21 +70,22 @@ end
 #=======================================================================
 
 # DRIVER CODE
- # initialize VirusPredictor for each state
+#new code
+ # runs the code for each of the states
+ # this belongs outside of the class because it is printing out the final information for each of the states. the calulations were already done inside the methods, this would be used to print out all of the data that was used for all of the 50 states instead of using only 4 states
+STATE_DATA.each do |new_state, new_state_data|
+  predictor = VirusPredictor.new(new_state, new_state_data[:population_density], new_state_data[:population])
+  predictor.virus_effects
+end
+#old code
+# alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
+# alabama.virus_effects
 
+# jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
+# jersey.virus_effects
 
-alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
-alabama.virus_effects
+# california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
+# california.virus_effects
 
-jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
-jersey.virus_effects
-
-california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
-california.virus_effects
-
-alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
-alaska.virus_effects
-
-
-#=======================================================================
-# Reflection Section
+# alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
+# alaska.virus_effects

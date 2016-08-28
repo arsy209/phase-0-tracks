@@ -43,7 +43,7 @@ function randomWords(string) {
 
 
 function randomWords(string) {
-  var wordArr =[];  
+  var word =[];  
   for(var j=0; j<string; j++) {  
     
     var alphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -53,9 +53,9 @@ function randomWords(string) {
       new_string += (alphabet[Math.round(Math.random() * 10)]);
     }
     
-    wordArr.push(new_string);
+    word.push(new_string);
   }
-  return wordArr;
+  return word;
 }
 
 //DRIVER CODES!!
@@ -66,14 +66,14 @@ console.log(longest_word(different_strings));
 
 
 // Driver code for compare_items
-var person_1 = {name: "Bobby", age: 23};
+var person_1 = {name: "Bobby", age: 13};
 var person_2 = {name: "Jimmy", age: 13};
 console.log(compare_items(person_1, person_2));
 
 
 // Driver code for randomWords
 for (var i =0; i<15; i++) {
-  var randomArr = randomWords(Math.ceil(Math.random()*10));
-  console.log(randomArr);
-  console.log(longest_word(randomArr));
+  var random_strings = randomWords(Math.ceil(Math.random()*10));
+  console.log(random_strings);
+  console.log(longest_word(random_strings));
 }

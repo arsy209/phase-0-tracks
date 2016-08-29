@@ -1,0 +1,99 @@
+
+1. opens the classroom.db file
+
+sqlite3 classrooms.db
+SQLite version 3.8.10.2 2015-05-20 18:17:19
+Enter ".help" for usage hints.
+sqlite>
+
+
+2. use the table command to list the tables present.
+
+sqlite> .table
+
+class     students
+
+
+3. Use the select from command to show the contents in each of the tables
+
+
+sqlite> SELECT * FROM students;
+
+1|Samuel|100| true
+2|Bobby|101|false
+3|Jason|100|true
+4|Cindy|101|true
+5|Lizzy|100|false
+
+
+sqlite> SELECT * FROM class;
+100|Ms.Sears
+101|Mr.Beans
+
+4.Update an item that meets some condition (you can choose a condition that makes sense).
+UPDATE students SET present = "true " WHERE name = "Bobby" ;
+
+sqlite> SELECT * FROM students;
+
+1|Samuel|100| true
+2|Bobby|101|true
+3|Jason|100|true
+4|Cindy|101|true
+5|Lizzy|100|false
+
+5.Display the information in both tables using one query.
+
+sqlite> SELECT * FROM students, class WHERE students.classroom=class.id;
+
+1|Samuel|100| true|100|Ms.Sears
+2|Bobby|101|true |101|Mr.Beans
+3|Jason|100|true|100|Ms.Sears
+4|Cindy|101|true|101|Mr.Beans
+5|Lizzy|100|false|100|Ms.Sears
+
+6. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+sqlite> SELECT students.name, class.teacher FROM students JOIN class ON students.classroom=class.id;
+Samuel|Ms.Sears
+Bobby|Mr.Beans
+Jason|Ms.Sears
+Cindy|Mr.Beans
+Lizzy|Ms.Sears
+
+7.Delete an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> DELETE FROM students WHERE name ="Lizzy";
+
+sqlite> SELECT * FROM students;
+
+1|Samuel|100| true
+2|Bobby|101|true
+3|Jason|100|true
+4|Cindy|101|true
+
+
+RELEASE THREE - DIFFERENT JOIN COMMANDS
+
+1. CROSS JOIN
+
+sqlite> SELECT * FROM students CROSS JOIN class;
+
+1|Samuel|100| true|100|Ms.Sears
+1|Samuel|100| true|101|Mr.Beans
+2|Bobby|101|true |100|Ms.Sears
+2|Bobby|101|true |101|Mr.Beans
+3|Jason|100|true|100|Ms.Sears
+3|Jason|100|true|101|Mr.Beans
+4|Cindy|101|true|100|Ms.Sears
+4|Cindy|101|true|101|Mr.Beans
+
+2. INNER JOIN
+
+sqlite>  SELECT students.name, class.teacher FROM  students INNER JOIN class on students.classroom=class.id;
+
+Samuel|Ms.Sears
+Bobby|Mr.Beans
+Jason|Ms.Sears
+Cindy|Mr.Beans
+
+

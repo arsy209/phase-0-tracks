@@ -17,7 +17,7 @@ n.times do
   q = num + q
   fibonacci << q
   end
-return fibonacci
+      return fibonacci
 end
 
 #create a driver code for the user to input their number of choice

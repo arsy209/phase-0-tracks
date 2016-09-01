@@ -45,5 +45,6 @@ while swapped do
 
   fibonacci
 end
+#this is just an example to show that the above method works correctly
 example = [1,2,6,4,88,343,6]
 p bubble_sort(example)

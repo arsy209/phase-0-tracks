@@ -10,7 +10,6 @@ create_table_cmd = <<-SQL
   CREATE TABLE IF NOT EXISTS phones (
   		 id INTEGER PRIMARY KEY,
   		 new_phone  VARCHAR(255),
-  		 company VARCHAR(255),
   		 cost INT 
 
   )
@@ -19,21 +18,21 @@ create_table_cmd = <<-SQL
 
 db.execute(create_table_cmd)
 
-db.execute("INSERT INTO phones (new_phone, company, cost) VALUES ('I phone 7','T-mobile',800)")
+db.execute("INSERT INTO phones (new_phone, cost) VALUES ('I phone 7',800)")
 
-def phones(db, new_phone,company,cost)
+def phones(db,new_phone,cost)
 
-	 db.execute("INSERT INTO phones (new_phone, company, cost) VALUES (?,?,?)", [new_phone, company, cost])
+	 db.execute("INSERT INTO phones (new_phone,cost) VALUES (?,?)", [new_phone, cost])
 end
 
 15.times do 
 
-	phones( db, Faker::Name.name, Faker::Number.between(300,1000)
+	phones(db, Faker::Name.name, Faker::Number.between(300,1000))
 end
 
 
 phones = db.execute("SELECT * FROM phones")
-cars.each do |p|
+phones.each do |p|
 
-	puts "You bought a #{p['new_phone']} from #{p[company]} for #{p[cost]}!"
+	puts "You bought a #{p['new_phone']} for #{p['cost']}!"
 end

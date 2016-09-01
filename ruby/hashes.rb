@@ -14,7 +14,7 @@
 
 puts "Welcome to Arshdeep's Designer Place!! \n**Garanteed Satisfication**\n\n "
 
-
+#creates an open hash for the user
 customer_information = {
 
 		name:"n/a",
@@ -29,8 +29,8 @@ customer_information = {
 }
 
 
-
-
+#driver code
+#WHILE LOOP used to make sure that the user prints out only yes or no for the question asked
 puts "Hello, What is your name?"
 customer_information[:name] = gets.chomp
 
@@ -64,7 +64,7 @@ customer_information[:color] = gets.chomp
 puts "What is your main email which you can receive your final information about your design?"
 customer_information[:email] = gets.chomp
 
-
+#allows the user to choose the choice of editing the answer they want to change before a final submmission.
 puts "The following information that you have put is all correct (yes/no)?"
 information = gets.chomp
 	if information == "yes"
@@ -113,4 +113,5 @@ elsif choice == "h"
 	customer_information[:email] = gets.chomp
 	
 end
+#prints out final information
 puts customer_information

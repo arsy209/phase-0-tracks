@@ -30,9 +30,47 @@
 # output: orgaznized list
 
 def create_list(new_items)
-	shopping_list = new_items.split("")
+	shopping_list = new_items.split(" ")
 	items_hash = Hash.new
-	shopping_list.each do |item|
-	items_hash[item] = 0 
+	shopping_list.each do |item| 
+	items_hash[item] = 1
+	end
+	return items_hash
+end
+
+def add_list(items_hash,item,quantity)
+	items_hash[item] = quantity
+	return items_hash
+end
+
+
+def remove_item(items_hash,item)
+	items_hash.delete(item)
+
+return items_hash
+end
+
+def update_items(items_hash,item,quantity)
+	items_hash[item] = quantity
+
+return items_hash
+
+end
+
+def print_items(items_hash)
+
+	items_hash.each do |item, quantity|
+		puts " #{item} : #{quantity}"
 	end
 end
+
+#driver code
+big_list = {}
+big_list = create_list("carrots oranges apples")
+big_list = add_list(big_list,"lemonade",2)
+big_list = add_list(big_list,"tomatoes",3)
+big_list = add_list(big_list,"onions",1)
+big_list = add_list(big_list,"ice cream",4)
+big_list = remove_item(big_list,"lemonade")
+big_list = update_items(big_list,"ice cream",1)
+print_items(big_list)

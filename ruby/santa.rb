@@ -1,4 +1,9 @@
 
+#create a santa class and a intitalizing method that would print for every new santa
+#add the different attr reader and accessor 
+#have different methods created which would then be printed out later on with the driver code
+#create a driver code that would then print out the results from each of the methods
+
 puts " WELCOME TO THE SANTA GENERATOR!:\n\n"
 
 class Santa

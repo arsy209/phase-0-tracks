@@ -74,3 +74,19 @@ big_list = add_list(big_list,"ice cream",4)
 big_list = remove_item(big_list,"lemonade")
 big_list = update_items(big_list,"ice cream",1)
 print_items(big_list)
+
+
+
+=begin
+What did you learn about pseudocode from working on this challenge?
+using peseudocode makes it easier to explain to the user on what each of the methods in the program would be doing
+What are the tradeoffs of using arrays and hashes for this challenge?
+to use a hash, you would  need to do hash = {} and to use a array, you would need to do array[]
+What does a method return?
+a method returns all that data that was written inside of it at the end.
+What kind of things can you pass into methods as arguments?
+the things that can be passed through a method are different arguements such as creating a list, doing equations, etc.
+How can you pass information between methods?
+inorder to pass the information between the methods you would need to use the same name you used from the first method to print out he information along with the updated information at the end.
+What concepts were solidified in this challenge, and what concepts are still confusing?
+i got a better understanding on how to pesudocode and write better methods. So far i am able to undestand everything that was done in this session.

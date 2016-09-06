@@ -36,3 +36,31 @@ end
 # puppy.dog_years(5)
 # puppy.play_dead
 
+class Clown
+  def initialize
+    puts "Initializing new clown..."
+  end
+
+  def juggle(count, objects)
+    puts "I'm juggling #{count} #{objects}!"
+  end
+
+  def laughs(count)
+    count.times {puts "HA!"}
+  end
+
+  def slips(object)
+    puts "UH OH I SLIPPED ON A #{object}!"
+  end
+end
+
+
+clowns = []
+50.times { clown = Clown.new
+      clowns.push(clown)}
+
+clowns.each do |clown|
+  clown.juggle(5, "chainsaws")
+  clown.laughs(3)
+  clown.slips("banana peel")
+end

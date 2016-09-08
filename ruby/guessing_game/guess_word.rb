@@ -7,14 +7,19 @@
 #the user has the choice of inputting their guessed word to check if its correct or not
 
 
+#create a guess_game class and have attr_accessor and attr_readers and a method that would initlialize an empty array.
+#each of the methods would also be defined here such as the gamer method , the start_game method and if the inputted word is correct or not.
+#the user would only be given 10 turns to guess the word before it is over.
+# put a driver code for the user 
+
 puts "WELCOME, LETS PLAY A LITTLE GAME!\n\n\n\n"
 
 class GuessTheWord
 
 attr_accessor :given_word, :array_checker, :correct_answer, :incorrect_answer
   
-  def initialize(word)
-    @given_word = word
+  def initialize(given_word)
+    @given_word = given_word
     @correct_answer = []
     @incorrect_answer = []
   end

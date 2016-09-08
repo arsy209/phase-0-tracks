@@ -1,29 +1,24 @@
 class TodoList
+	attr_accessor :list
 
-   attr_reader
-   attr_accessor :list
 
-   def initialize(list)
-     @list = list
-   end
+	def initialize(list)
+		@list = list 
+	end 
 
-   def get_items(index_number)
-     @list[index_number]
-   end
+	def get_items
+		@list
+	end
 
-   def get_items
-     @list
-   end
+	def add_item(item)
+		@list << item
+	end 
 
-   def get_item(index_number)
-     @list[index_number]
-   end
+	def delete_item(item)
+		@list.delete(item)
+	end
 
-   def add_item(new_item)
-     @list << new_item
-   end
-   
-   def delete_item(delete_item)
-     @list.delete(delete_item)
-   end
+	def get_item(index_num)
+		@list[index_num]
+    end 
 end

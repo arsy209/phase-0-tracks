@@ -1,52 +1,40 @@
-var colors =["red","blue","yellow","green"];
-var names = ["Bob","Steve","Mo","Larry"];
+// declaring an array in JavaScript is similar to Ruby
+var colors = ["Indigo", "Hot Pink", "Mousey Brown", "Grassy Green"];
+var horses = ["Trigger", "Larry", "Far Out", "Missy Myers"];
 
-colors.push("orange");
-names.push("Curly");
+colors.push("Plush Purple");
+horses.push("Ginger");
 
 console.log(colors);
-console.log(names);
+console.log(horses);
 
 var horse_colors = {};
-//if the colors length and are not the same, the for loop will not work
-if (colors.length == names.length){
-for (i = 0 ; i < colors.length ; i++) {
- horse_colors[names[i]] = colors[i];
-}
-}
+ if (colors.length == horses.length) {
+ 	for(i=0; i<colors.length; i++) {
+ 		horse_colors[horses[i]] = colors[i];
+ 	}
 
-console.log(horse_colors) ;
+ }
 
-function Car(make,model,year){
- console.log("Your new car:",this) ;
+ console.log(horse_colors);
 
- this.make = make ;
- this.model = model ;
- this.year = year ;
-
- this.start = function() {console.log("VROOOOM")} ;
-
- console.log("New Car Bought") ;
+ function Car(color,year,model){
+ console.log("This is your new car:", this);
+ this.color = color;
+ this.year = year;
+ this.model = model;
+this.start = function() {console.log("TADAAA")};
+console.log("Heres your new car:");
 }
 
-console.log("Your Car is Ready");
-var my_car = new Car("Aston Martin","DB10",2017);
-console.log(my_car);
-console.log("Your Car sounds like:");
-my_car.start();
+console.log("Your new car is ready for you");
+var new_car =  new Car("Red",2016,"Flashy");
+console.log(new_car);
+console.log("PRESENTING YOUR NEW CAR");
+new_car.start();
 
-console.log("~ ~ ~ ~ ~");
-
-console.log("Your Car is Ready");
-var another_car = new Car("Bavarian Motorworks","X8",2017);
-console.log(another_car);
-console.log("Your Car sounds like:");
-another_car.start();
-
-console.log("~ ~ ~ ~ ~");
-
-console.log("Your Car is Ready");
-var one_more_car = new Car("lamborghini","Centenario Roadster",2017);
-console.log(one_more_car);
-console.log("Your Car sounds like:");
-one_more_car.start();
+console.log("Your new car is ready for you");
+var new_car2 =  new Car("Sky Blue",2016, "Nitetime");
+console.log(new_car2);
+console.log("PRESENTING YOUR NEW CAR");
+new_car2.start();

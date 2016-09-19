@@ -1,0 +1,101 @@
+Arshdeep Singh
+
+1. opens the classroom.db file
+
+sqlite3 classroom.db
+SQLite version 3.8.10.2 2015-05-20 18:17:19
+Enter ".help" for usage hints.
+
+
+2. use the table command to list the tables present.
+
+sqlite> .tables
+class     students
+
+3. Use the select from command to show the contents in each of the tables
+
+sqlite> SELECT * FROM students;
+
+1|Jessie Kanter|true|101
+2|Harnoor Singh|false|101
+3|Kimmer Janet|true|102
+4|Harry|true|102
+5|Onkie Ponkie|true|101
+6|errire|true|102
+
+sqlite> SELECT * FROM class;
+
+101|MR.BEANS
+102|MR.Shampi
+
+4.Update an item that meets some condition (you can choose a condition that makes sense).
+sqlite> UPDATE students SET present = "true " WHERE name = "Harnoor Singh";
+
+sqlite> SELECT * FROM students;
+
+1|Jessie Kanter|true|101
+2|Harnoor Singh|true |101
+3|Kimmer Janet|true|102
+4|Harry|true|102
+5|Onkie Ponkie|true|101
+6|errire|true|102
+
+5.Display the information in both tables using one query.
+
+sqlite> SELECT * FROM students, class WHERE students.classroom=class_id;
+
+1|Jessie Kanter|true|101|101|MR.BEANS
+2|Harnoor Singh|true |101|101|MR.BEANS
+3|Kimmer Janet|true|102|102|MR.Shampi
+4|Harry|true|102|102|MR.Shampi
+5|Onkie Ponkie|true|101|101|MR.BEANS
+6|errire|true|102|102|MR.Shampi
+
+6. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+sqlite> SELECT students.name, class.teacher FROM students JOIN class ON students.classroom=class_id;
+
+Jessie Kanter|MR.BEANS
+Harnoor Singh|MR.BEANS
+Kimmer Janet|MR.Shampi
+Harry|MR.Shampi
+Onkie Ponkie|MR.BEANS
+errire|MR.Shampi
+
+7.Delete an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> DELETE FROM students WHERE name = "errire";
+
+sqlite>  SELECT * FROM students;
+
+1|Jessie Kanter|true|101
+2|Harnoor Singh|true |101
+3|Kimmer Janet|true|102
+4|Harry|true|102
+5|Onkie Ponkie|true|101
+
+RELEASE THREE - DIFFERENT JOIN COMMANDS
+
+1. CROSS JOIN
+
+sqlite> SELECT * FROM students CROSS JOIN class;
+
+1|Jessie Kanter|true|101|101|MR.BEANS
+1|Jessie Kanter|true|101|102|MR.Shampi
+2|Harnoor Singh|true |101|101|MR.BEANS
+2|Harnoor Singh|true |101|102|MR.Shampi
+3|Kimmer Janet|true|102|101|MR.BEANS
+3|Kimmer Janet|true|102|102|MR.Shampi
+4|Harry|true|102|101|MR.BEANS
+4|Harry|true|102|102|MR.Shampi
+5|Onkie Ponkie|true|101|101|MR.BEANS
+5|Onkie Ponkie|true|101|102|MR.Shampi
+
+2. INNER JOIN
+sqlite> SELECT students.name, class.teacher FROM students INNER JOIN class on students.classroom=class_id;
+
+Jessie Kanter|MR.BEANS
+Harnoor Singh|MR.BEANS
+Kimmer Janet|MR.Shampi
+Harry|MR.Shampi
+Onkie Ponkie|MR.BEANS

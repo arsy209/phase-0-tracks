@@ -1,37 +1,46 @@
-puts " A busy day on a stop light in the city:".center(20).upcase
 
-stop_light = 
+#create a nested data structure for a school day
+#create a first floor hash that would contain three classrooms with students in each room
+#create a second floor hash that would contain two classrooms with students in each room
+#print each of the data out 
+#add a hash to the first floor
+#add a has to the second floor
+#print out both data at the end
+
+
+
+puts " First day of class".center(20).upcase
+
+school = 
 {
-	lane_1: 
+	first_floor: 
 	{
 	
-	"car 1" => [ "bob, jessie, sam"],
-	"car 2" => [ "harry, josh, patrick"],
-	"car 3" => [ "jolly, linda, lisa, martha"],
+	"room 101" => ["cindy,james, julie, harry, bob, lisa, krissy"],
+	"room 102" => ["jimmy, liz, linda, lima, louse, kissma, aj"],
+	"room 103" => [ "jarry, limbda, hana, kana, jana, intersta"],
 
 	},
 	
-	lane_2: 
+	second_floor: 
 	{
-	"car 4"=> [ "chris, april, liz, saman"],
-	"car 5"=> [ "simran, seema, reet, simmi"]
+	"room 201"=> [ "harris, jim, hammer, usha, kisha, lima, joe"],
+	"room 202"=> [ "simmi, simran, jamsa, ka, likma, rishes"]
 	}
 }
 
 
-p stop_light [:lane_1]
+puts school [:first_floor]
 
-p stop_light [:lane_2]
+puts school [:second_floor]
 
-p stop_light [:lane_1]["car 1"] 
+puts school [:first_floor]["room 101"] 
 
-p stop_light [:lane_2]["car 5"]
+puts school [:second_floor]["room 202"]
 
-stop_light [:lane_2]["cop"] = [ "officer jones, officer jose"]
-p stop_light[:lane_2]
+school [:second_floor]["principles office"] = [ " Ms. jisla"]
+puts school [:second_floor]
 
-stop_light [:lane_1]["school bus"] = [ " driver: jilly, students: cindy, samantha, sammy, samer, gosh, jabber, usher, bob, bunny, georgy"]
-p stop_light[:lane_1]
-
-p stop_light [:lane_1]
-p stop_light [:lane_2]
+school [:first_floor]["lunch room"] = [ "lunch ladys, head watcher"]
+puts school [:first_floor]
+puts school [:second_floor]

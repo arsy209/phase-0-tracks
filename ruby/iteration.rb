@@ -1,55 +1,57 @@
-def greeting
-	name1 = "Bob"
-	name2 = "Joe"
+#create a method 
+#print out the data by calling it at the end
+def meeting
+	first_person = "Arshdeep"
+	second_person = "Anmol"
 	puts "Hello, how are you doing today?"
-	yield(name1, name2)
+	yield(first_person, second_person)
 end
+meeting {|first_person,second_person| puts "Nice seeing you today #{first_person} and #{second_person}."}
 
-greeting {|name1,name2| puts "Nice seeing you today #{name1} and #{name2}."}
+#declare a new array
+new_drinks = ["coke","pepsi","apple juice","pineapple juice","Mango Juice"]
 
-#declare an array
-new_food = ["pasta","corn","apple","oranges","mangos"]
-
-#use the opbject .each
-new_food.each do |food|
-	p "#{food} is my fav fooooood! <3"
+#use .each
+new_drinks.each do |drink|
+	p "#{drink} a favorite drink of mine!"
 end
     #use object .map
-    new_food.map do |food|
-    food.capitalize!
+    new_drinks.map do |drink|
+    drink.capitalize!
 end
-p new_food
+p new_drinks
 
 #declare a  new Hash
-differnt_animals = {
-	fish: "Salmon", 
-	cat: "Tiger", 
-	dog: "Husky", 
+different_creatures = {
+	dinosaur: "T-Rex", 
+	mammal: "Whale", 
+	ghost: "Casper", 
 	bird:"Eagle", 
-	bug: "Spider",
+	underground: "worms",
 }
 
 #use the .each object on the hash
-differnt_animals.each do |type,animals|
-	p "I really like #{type}s like the #{animals}."
+different_creatures.each do |type,creature|
+	p "this type of #{creature} is part of  #{type} clan."
 end
-p differnt_animals
+p different_creatures
 
 #A method that iterates through the items, deleting any that meet a certain condition (for example, deleting any numbers that are less than 5).
-numbers_itteration = [1,2,3,4,5]
-p numbers_itteration
+number_itteration = [1,2,3,4,5]
+p number_itteration
 
-
-
-def numbers_less(numbers_itteration)
-	numbers_itteration.delete_if {|numbers| numbers <=3}
+#deletes the numbers if it is less then equal to 3
+def number_less(number_itteration)
+	number_itteration.delete_if {|numbers| numbers <=3}
 end
-p numbers_less(numbers_itteration)
+p number_less(number_itteration)
 
+
+#creates a hash 
 music_itteration = {
-	rock:"The Rolling Stones",
-	country:"Shania Twain",
-	kpop:"2ne1",
+	bhangra:"Bhabhi teri paan miss kalan mardi",
+	hindi:"its the time to disco",
+	rock:"highway 61",
 	jazz:"Etta James",
 }
 
@@ -58,23 +60,22 @@ p music_itteration
 
 
 def find_fav_music(music_itteration)
-	music_itteration.delete_if {|genre,artist| genre == :kpop}
+	music_itteration.delete_if {|genre,artist| genre == :bhangra}
 end
 p find_fav_music(music_itteration)
 
 
-
 #A method that filters a data structure for only items that do satisfy a certain condition (for example, keeping any numbers that are less than 5).
 	
-def numbers_more(numbers_itteration)
-	numbers_itteration.keep_if {|numbers| numbers <=5}
+def number_more(number_itteration)
+	number_itteration.keep_if {|numbers| numbers <=5}
 end
-p numbers_more(numbers_itteration)
+p number_more(number_itteration)
 
 
 
 def find_music(music_itteration)
-	music_itteration.keep_if {|genre,artist| genre == :jazz || artist == "Etta James"}
+	music_itteration.keep_if {|genre,artist| genre == :hindi || artist == "its the time to disco"}
 end
 p find_music(music_itteration)
 
@@ -82,10 +83,10 @@ p find_music(music_itteration)
 
 #A different method that filters a data structure for only items satisfying a certain condition -- Ruby offers several options!
 
-def numbers_even(numbers_itteration)
-	numbers_itteration.select {|numbers| numbers.even?}
+def numbers_even(number_itteration)
+	number_itteration.select {|numbers| numbers.even?}
 end
-p numbers_even(numbers_itteration)
+p numbers_even(number_itteration)
  
 
 
@@ -94,37 +95,24 @@ def find_music_type(music_itteration)
 end
 p find_music_type(music_itteration)
 
-
-
 #A method that will remove items from a data structure until the condition in the block evaluates to false, then stops (you may not find a perfectly working option for the hash, and that's okay).
-test_list = [1,2,3,4,5,6,7,8,9,10]
+test = [2,4,6,8,10,12,14]
 
-def numbers_condition(test_list)
-	test_list.drop_while {|list| list <= 1}
+def numbers_condition(test)
+	test.drop_while {|list| list <= 8}
 end
-p numbers_condition(test_list)
+p numbers_condition(test)
 
 
 
-test_hash = {
-	horror:"Scream",
-	comedy:"The Hangover",
-	romance:"The Notebook",
-	action: "G.I.Joe"
+new_movie = {
+	horror:"The house",
+	comedy:"Scary movie 3",
+	romance:"mainae pyar kyu kia",
+	action: "The expandables"
 }
 
-def movie_type(test_hash)
-	test_hash.drop_while {|type,name| type == :horror}
+def movie_type(new_movie)
+	new_movie.drop_while {|type,name| type == :horror}
 end
-p movie_type(test_hash)
-
-
-
-
-
-
-
-
-
-
-
+p movie_type(new_movie)

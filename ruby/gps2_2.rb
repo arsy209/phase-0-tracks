@@ -1,93 +1,83 @@
 # Method to create a list
 # input: string of items separated by spaces (example: "carrots apples cereal pizza")
 # steps: 
- # [fill in any steps here]
- # create a method thats splits a string in an array 
- # we will use a hash to store the string splited string
- # set default quantity
- # use (paran=0) to set the starting default amount
- # print the list to the console [can you use one of your other methods here?]
- # create a stored Method 
+  # create an empty
+  #take the string and use .split("") 
+  #
+  # set default quantity
+  # print the list to the console [can you use one of your other methods here?]
 # output: [what data type goes here, array or hash?]
-# hash is better because we can store and change all the information needed.
-
-def list_creator(input_items)
-    items_array = input_items.split(" ")
-    list_items = Hash.new(0)
-    items_array.each do |item|
-        list_items[item] = 1
-    end
-    return list_items
-end
-
-
+#an hash better as an output so it is easier to update and change the information.
 
 # Method to add an item to a list
 # input: item name and optional quantity
-# steps:
-# output:
-
-def add_items(list_items, item, amount)
-    list_items[item] += amount
-    return list_items
-end
-
-items =  list_creator("apples oranges")
-add_items(items,"lemonade",6 )
-add_items(items,"tomatos",3 )
-add_items(items,"onions",1 )
-add_items(items,"ice-cream",4 )
-add_items(items,"apples",4 )
-
-
-puts items
+# steps: we are going to take the empty hash and include new items and quantity.
+# output: new hash with updated item and quanity 
 
 # Method to remove an item from the list
-# input: item
-# steps: use delete methods
-# output: deleted item from the list
-
-def remove_item(list_items,item)
-    list_items.delete(item)
-    item
-end
-
-puts remove_item(items,'lemonade')
-puts items
-
+# input: hash, item
+# steps: delete the selected item from the hash 
+# output: the new updated hash
 
 # Method to update the quantity of an item
-# input: amount, list_items , item to update
-# steps: update the value 
-# output: new amount
-
-def update_amount(items, item, amount)
-        items[item] = amount    
-        items[item]
-end
-
-update_amount(items,'ice-cream', 1)
-puts items
+# input: hash, item, quantity 
+# steps: change the quanity of the selected item
+# output: the new updated hash
 
 # Method to print a list and make it look pretty
-# input: hash of items
-# steps: do a loop to print each item and amount
-# output: item and amount
+# input: hash 
+# steps: prints out the hash in an organized list
+# output: orgaznized list
 
-def grocery_list(items)
-    puts "This is my grocery list:\n"
-    items.each do |item, amount|
-        puts "#{item} = #{amount} "
-    end
+def create_list(new_items)
+	shopping_list = new_items.split(" ")
+	items_hash = Hash.new
+	shopping_list.each do |item| 
+	items_hash[item] = 1
+	end
+	return items_hash
 end
 
-grocery_list(items)
+def add_list(items_hash,item,quantity)
+	items_hash[item] = quantity
+	return items_hash
+end
 
+
+def remove_item(items_hash,item)
+	items_hash.delete(item)
+
+return items_hash
+end
+
+def update_items(items_hash,item,quantity)
+	items_hash[item] = quantity
+
+return items_hash
+
+end
+
+def print_items(items_hash)
+
+	items_hash.each do |item, quantity|
+		puts " #{item} : #{quantity}"
+	end
+end
+
+#driver code
+big_list = {}
+big_list = create_list("carrots oranges apples")
+big_list = add_list(big_list,"lemonade",2)
+big_list = add_list(big_list,"tomatoes",3)
+big_list = add_list(big_list,"onions",1)
+big_list = add_list(big_list,"ice cream",4)
+big_list = remove_item(big_list,"lemonade")
+big_list = update_items(big_list,"ice cream",1)
+print_items(big_list)
 
 
 
 =begin
-	
 What did you learn about pseudocode from working on this challenge?
 using peseudocode makes it easier to explain to the user on what each of the methods in the program would be doing
 What are the tradeoffs of using arrays and hashes for this challenge?
@@ -99,4 +89,4 @@ the things that can be passed through a method are different arguements such as 
 How can you pass information between methods?
 inorder to pass the information between the methods you would need to use the same name you used from the first method to print out he information along with the updated information at the end.
 What concepts were solidified in this challenge, and what concepts are still confusing?
-	i got a better understanding on how to pesudocode and write better methods. So far i am able to undestand everything that was done in this session.
+i got a better understanding on how to pesudocode and write better methods. So far i am able to undestand everything that was done in this session.

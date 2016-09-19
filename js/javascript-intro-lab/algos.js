@@ -61,13 +61,13 @@ function randomWords(string) {
 //DRIVER CODES!!
 
 // Driver code for longest_word
-var different_strings = ["CHARMANDER","SQUIRTLE","BULBASAUR"];
+var different_strings = ["Arshdeep","Sammy","Bob"];
 console.log(longest_word(different_strings));
 
 
 // Driver code for compare_items
-var person_1 = {name: "Bobby", age: 13};
-var person_2 = {name: "Jimmy", age: 13};
+var person_1 = {name: "Larry", age: 23};
+var person_2 = {name: "Moe", age: 23};
 console.log(compare_items(person_1, person_2));
 
 

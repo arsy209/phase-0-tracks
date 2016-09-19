@@ -1,68 +1,66 @@
+# MPS 6.2
+# Arsy and Jacob
+
 class Puppy
-#this method runs every time we create a instance o this class. If we change the name, this method turns into a regular one.
-   def initialize
-    puts "Initializing new puppy instance ..."
-   end
-   
+  def initialize
+    puts "Initializing new puppy instance..."
+  end
+
   def fetch(toy)
     puts "I brought back the #{toy}!"
     toy
   end
-  
-  def speak(many_times)
-  many_times.times{puts "Woof!"}
+
+  def speak(count)
+    count.times{p "Woof!"}
   end
-  
+
   def roll_over
-    puts "*rolls over*"
+    puts "**rolls over**"
   end
-  
-  def dog_years(age)
-    age * 7
+
+  def dog_years(human_years)
+    p "#{human_years*7}"
   end
-  
-  def run
- 
-  puts "I am running very fast!!!!" 
+
+  def play_dead
+    puts "**dies**"
   end
-end
-
-puppy = Puppy.new 
-
-puppy.fetch('ball')
-puppy.speak(4)
-puppy.roll_over
-puppy.dog_years(2)
-puppy.run
-
-puts "\n\n\n\n\n\n\n\n\n"
-class Person
- def initialize
-    puts "Initializing new Person ..."
-   end
- 
- 
- def walk
-  puts "I am walking now."
- end
- 
- def sleep
-  puts "rhrhrhrhrhr!!!"
- end
 
 end
 
-# maria = Person.new
-# maria.walk
-# maria.sleep
-array = []
-50.times {
-  person = Person.new
-  array.push(person)
-}
+# puppy = Puppy.new
+# puppy.fetch("ball")
+# puppy.speak(4)
+# puppy.roll_over
+# puppy.dog_years(5)
+# puppy.play_dead
 
- array.each do |one_person|
-  one_person.walk
-    one_person.sleep  
- end
+class Clown
+  def initialize
+    puts "Initializing new clown..."
+  end
 
+  def juggle(count, objects)
+    puts "I'm juggling #{count} #{objects}!"
+  end
+
+  def laughs(count)
+    count.times {puts "HA!"}
+  end
+
+  def slips(object)
+    puts "UH OH I SLIPPED ON A #{object}!"
+  end
+end
+
+
+clowns = []
+50.times { clown = Clown.new
+      clowns.push(clown)}
+
+clowns.each do |clown|
+  clown.juggle(5, "chainsaws")
+  clown.laughs(3)
+  clown.slips("banana peel")
+end

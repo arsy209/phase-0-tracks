@@ -4,10 +4,10 @@
 
 
 #characteristics--------
-#fur color : brown
-#eye color : black
-#name : Grizzly
-#height: 3 inches tall
+#fur color : white
+#eye color : blue
+#name : Thunder
+#height: 5 inches tall
 #type: pitbull
 
 #behavior----------
@@ -15,6 +15,7 @@
 #eat
 #sleep
 #run
-#chases squirrls
 #fetch
 #howl
+#licks toilet
+#gets excited fast

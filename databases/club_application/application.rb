@@ -35,3 +35,72 @@ db.execute(table)
 	
 		db.execute("INSERT INTO applications (name,age,phone_number,address,email,club_name,hours) VALUES (?,?,?,?,?,?,?)", [name,age,phone_number,address,email,club_name,hours])
 	end
+
+#user input/driver code
+			puts "Welome to Singh's Multi-Club where you come in stressed and leave relaxed and happy!"
+			puts "-------------------------------------------------------------------------------"
+			puts "***Singh has personally made this club to keep everyone happy***"
+			puts "-------------------------------------------------------------------------------\n"
+			puts "~We have different Clubs that you would love and meet your expectations.~\n"
+			puts "~~~~OUR AIM BRING HAPPINESS AND KEEP A PERSON STRESS FREE!~~~\n\n\n"
+			puts "**OPEN : 7 DAYS A WEEK, 24 HOURS A DAY**\n\n\n"
+
+	while true 
+	puts "Hello, Would you like to sign up to Singh's Multi-Club today (yes/no)?"
+		 sign = gets.chomp
+		if sign == "no"
+			puts "Aw, Maybe another day if you change your mind. \n\nPlease do come back!"
+			break
+		else
+			puts "1. What is your full name?"
+			name = gets.chomp.capitalize
+			puts "2. What is your age?"
+			age = gets.chomp
+			puts "3. What is your phone number? (format : xxx-xxx-xxxx)"
+			phone_number = gets.chomp
+			puts "4. What is your address?"
+			address = gets.chomp
+			puts "5. What is your email address?"
+			email = gets.chomp
+			puts "Listed below are the clubs that are offered at our place
+
+								a. Basketball club 
+								b. Drama/theater club
+								c. Baseball club  
+								d. football club 
+								e. cricket club 
+								f. gamers club 
+								g. sleeping/relaxing club \n"
+			puts "**DISCLAIMER: ALL CLUBS INCLUDE DAILY BREAKFAST,LUNCH AND DINNER**"
+			puts "6. Which club caught your eyes and would love to join? \n(choose the letter that matches)"
+			letter = gets.chomp
+					if letter == "a"
+					   club_name = "Basketball club"
+					elsif letter == "b"
+						  club_name = "Drama club"
+					elsif letter == "c"
+						  club_name = "Baseball club" 
+					elsif letter == "d"
+						  club_name = "football club"
+					elsif letter == "e"
+						  club_name = "theater club"
+					elsif letter == "f"
+						  club_name = "gamers club"
+					else 
+						  club_name = "sleeping/relaxing/yoga club"
+					end
+
+			puts "How many Hours will You be here for?"
+				hours = gets.chomp
+
+			applications(db,name,age,phone_number,address,email,club_name,hours)
+			puts "Thank you for applying, you can begin anytime you want too!\n\n\n"
+			puts "For more information or Finding out club timing, You can call 1-800-232-2324 ext. 102"
+			puts "********CONTACT OWNER**********"
+			puts "Email: Singh@sclub.org"
+			puts "phone: 123-456-7890 ext.223"
+			puts "*******************************"
+
+		end
+			break
+	end

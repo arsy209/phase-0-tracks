@@ -104,3 +104,12 @@ db.execute(table)
 		end
 			break
 	end
+	#prints out the new information for every new person that applied.
+			puts "CONTACT INFORMATION OF PEOPLE WHO GO TO THE CLUB:\n\n"
+			club = db.execute ("SELECT *FROM applications")
+			club.each do |info|
+  			puts "(#{info[0]}) Name: #{info[8]}|| Name: #{info[2]} || Age :#{info[3]} || Phone Number:#{info[4]} || Address:#{info[5]} || Email: #{info[6]} || Hours spent: #{info[7]} || Club Joined: #{info[1]}"
+  			end
+  			# "**club.db database file can be ran to see the data information also**"
+
+

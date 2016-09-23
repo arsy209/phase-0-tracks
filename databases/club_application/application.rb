@@ -77,13 +77,13 @@ db.execute(table)
 					if letter == "a"
 					   club_name = "Basketball club"
 					elsif letter == "b"
-						  club_name = "Drama club"
+						  club_name = "Drama/theater club"
 					elsif letter == "c"
 						  club_name = "Baseball club" 
 					elsif letter == "d"
 						  club_name = "football club"
 					elsif letter == "e"
-						  club_name = "theater club"
+						  club_name = "cricket club"
 					elsif letter == "f"
 						  club_name = "gamers club"
 					else 
@@ -108,7 +108,7 @@ db.execute(table)
 			puts "CONTACT INFORMATION OF PEOPLE WHO GO TO THE CLUB:\n\n"
 			club = db.execute ("SELECT *FROM applications")
 			club.each do |info|
-  			puts "(#{info[0]}) Name: #{info[8]}|| Name: #{info[2]} || Age :#{info[3]} || Phone Number:#{info[4]} || Address:#{info[5]} || Email: #{info[6]} || Hours spent: #{info[7]} || Club Joined: #{info[1]}"
+  			puts "(#{info[0]}) Name: #{info[1]} || Age :#{info[2]} || Phone Number:#{info[3]} || Address:#{info[4]} || Email: #{info[5]} || Hours spent: #{info[7]} || Club Joined: #{info[6]}"
   			end
   			# "**club.db database file can be ran to see the data information also**"
 

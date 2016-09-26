@@ -23,6 +23,13 @@ get '/:person_1/loves/:person_2' do
   "#{params[:person_1]} loves #{params[:person_2]}"
 end
 
+#write a get route for /contacts
+#use devbootcamp location (nyc)
+get '/contact' do
+
+"<h1><a href='https://devbootcamp.com/locations/new-york'>NYC DEVBOOTCAMP LOCATION</a></h1>"
+end
+
 # write a GET route that retrieves
 # all student data
 get '/students' do

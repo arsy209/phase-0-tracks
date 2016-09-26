@@ -1,0 +1,19 @@
+body {
+    background-color: lightblue;
+}
+
+
+#box
+{
+	background:red;height:100px;width:100px;margin:40px;
+
+}
+
+#btn1
+{
+	margin:20px;
+}
+#btn2
+{
+	margin:30px;
+}

@@ -3,17 +3,32 @@ body {
 }
 
 
-#box
-{
-	background:red;height:100px;width:100px;margin:40px;
+h1 {
 
+	  border-style: dotted dashed;
+    background-color:lightblue;
+
+    font-size: 300%;
+   
+ 
+    text-align: center;
+ 
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 30px;
+    padding-left: 10px;
 }
 
-#btn1
+#first
 {
-	margin:20px;
+	margin: 10px;
 }
-#btn2
+
+
+.center
 {
-	margin:30px;
+	padding-top: 60px;
+    padding-right: 10px;
+    padding-bottom: 30px;
+    padding-left: 60px;
 }

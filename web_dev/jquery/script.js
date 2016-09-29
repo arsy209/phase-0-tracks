@@ -1,10 +1,10 @@
 
 $(document).ready(function(){
-    $("#btn1").click(function(){
-        $("#box").animate({height:"500px"});
+    $("#first").click(function(){
+        $("#puppy").hide();
     });
-    $("#btn2").click(function(){
-        $("#box").animate({height:"150px" , width: "240px"});
+    $("#second").click(function(){
+        $("#puppy").show();
     });
 });
 
@@ -15,8 +15,9 @@ $(document).ready(function() {
     });
 });
 
-$(document).ready(function() {
-    $("p").click(function() {
-        $("p").fadeTo("fast", 0.3);
+
+$(document).ready(function(){
+    $("#multi").click(function(){
+        $("#multiply").clone().appendTo("body");
     });
 });

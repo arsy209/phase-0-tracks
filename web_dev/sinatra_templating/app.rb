@@ -7,32 +7,19 @@ set :public_folder, File.dirname(__FILE__) + '/static'
 db = SQLite3::Database.new("students.db")
 db.results_as_hash = true
 
-create_table_cmd = <<-SQL
-  CREATE TABLE IF NOT EXISTS reviews(
-    
-    name VARCHAR(255),
-    campus VARCHAR(255),
-    reviews VARCHAR(255)
-  )
-SQL
-
-db.execute(create_table_cmd)
 # show students on the home page
 get '/' do
   @students = db.execute("SELECT * FROM students")
- 
+  @campus = db.execute("SELECT * FROM reviews")
   erb :home
 end
 
 get '/students/new' do
   erb :new_student
 end
-get '/reviews/new' do
-  erb :campus
-end
 
-get '/students/campus' do
-@reviews = db.execute("SELECT * FROM reviews")
+get '/campus' do
+  erb :campus
 end
 
 # create new students via
@@ -42,10 +29,11 @@ post '/students' do
   redirect '/'
 end
 
-post '/campus' do
+post '/reviews' do 
   db.execute("INSERT INTO reviews (name, campus, review) VALUES (?,?,?)", [params['name'], params['campus'], params['review']])
-redirect '/'
+  redirect '/'
 end
 
+# add static resources
 
 # add static resources

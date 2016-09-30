@@ -1,3 +1,4 @@
+
 <html>
 <head>
   <title>Student Management System</title>
@@ -7,14 +8,20 @@
   <h1>Student Management System</h1>
   <p>Welcome to the student management system.</p>
   <p>Click <a href="students/new">here</a> to create a new student.</p>
-  <p>Click <a href="students/campus">here</a> to create a review for the campus.</p>
+  <p>Click <a href="campus">here</a> to create a review for the campus.</p>
 
   <ul>
     <% @students.each do |student| %>
       <li><%= student['name'] %>, <%= student['age'] %></li>
     <% end %>
   </ul>
-  
+
+  <ul>
+    <% @campus.each do |student| %>
+      <li><%= student['name'] %>, <%= student['campus'] %>, <%= student['review'] %></li>
+    <% end %>
+  </ul>
+
 
 </body>
 </html>
